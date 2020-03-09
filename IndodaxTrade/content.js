@@ -64,12 +64,7 @@ function calculate(priceNow) {
 
     hasil = ((max - min) / max) * 100
     data.unshift(hasil)
-
-    // if (priceNow >= splitOpFix[1]) {
-    //     console.log("Candle Hijau, Harga terakhir lebih besar dari harga pembukaan")
-    // } else {
-    //     console.log("Candle Merah, Harga terakhir lebih kecil dari harga pembukaan")
-    // }
+    
     console.log("Price max: " + max + " | Price min: " + min + " | Hasil : " + hasil + "%")
 }
 
