@@ -1,0 +1,14 @@
+{
+    "manifest_version": 2,
+    "name": "Huobi Bot",
+    "version": "0.3",
+    "description": "Bismillah semoga berkah",
+    "content_scripts": [
+        {
+          "matches": [
+            "https://www.huobi.com/*"
+          ],
+          "js": ["jquery-3.4.1.min.js", "responsivevoice.js", "content.js"]
+        }
+      ]
+}
