@@ -71,14 +71,17 @@ function calculate(priceNow) {
     // console.log("Open Price >> " + splitOpFix + "| price now: "+ priceNow)
 
     hasil = ((max - min) / max) * 100
+    // Cek Harga 4%
+    if(parseFloat(hasil) >= 4){
+        console.log("Harga mencapai 4%")
+        responsiveVoice.speak("Harga mencapai 4%");
+    }
     data.unshift(hasil)
-
+    // Membaca Candle
     if (parseFloat(splitOpFix) > parseFloat(priceNow)) {
         console.log("Candle Merah")
-        responsiveVoice.speak("Candle Merah");
     } else if (parseFloat(priceNow) > parseFloat(splitOpFix)) {
         console.log("Candle Hijau")
-        responsiveVoice.speak("Candle Hijau");
     }
     var res = new Result(max, min, hasil)
     console.table(res)
@@ -90,8 +93,8 @@ function start(waktuku) {
     setTimeout(() => {
         var waktu = document.querySelector("#chart > div > p:nth-child(7) > span:nth-child(1)").innerText
         
-        if(waktuku.length > 1){
-            waktuku = waktuku[1]
+        if(String(waktuku).length > 1){
+            waktuku = String(waktuku)[1]
         }
 
         if (waktu[10] == waktuku) {
